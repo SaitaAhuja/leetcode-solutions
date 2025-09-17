@@ -1,24 +1,24 @@
 #include <stdio.h>
 
-int numberOfSteps(int n){
+int numberOfSteps(int num){
     int steps = 0;
-    while (n > 0){
-          if (n % 2 == 0){
-                  n = n/2;
+    while (num > 0){
+          if (num % 2 == 0){
+                  num = num/2;
           }
           else{
-               n = n - 1;
+               num = num - 1;
           }        
           steps ++;
           }
           return steps;
      }
      int main(){
-         int num;
+         int n;
          printf("Enter a number: ");
-         scanf("%d",&num);
+         scanf("%d",&n);
          
-     int result = numberOfSteps(num);
-     printf("Number of steps to reduce %d to zero = %d\n", num, result);
+     int result = numberOfSteps(n);
+     printf("Number of steps to reduce %d to zero = %d\n",n, result);
       return 0;
 }
