@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int hammingWeight(int n) {
+    uint32_t unsigned_n = (uint32_t)n;
+    int count = 0;
+    while (unsigned_n) {
+        count += unsigned_n & 1;
+        unsigned_n >>= 1;
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Number of 1 bits: %d\n", hammingWeight(n));
+    return 0;
+}
