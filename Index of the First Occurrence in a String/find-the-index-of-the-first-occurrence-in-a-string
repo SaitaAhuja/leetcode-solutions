@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        if (needle.empty()) return 0;  // special case
+
+        int n = haystack.size();
+        int m = needle.size();
+
+        for (int i = 0; i <= n - m; i++) {   
+            bool match = true;
+            for (int j = 0; j < m; j++) {
+                if (haystack[i + j] != needle[j]) {
+                    match = false;           
+                    break;
+                }
+            }
+            if (match) return i;            
+        }
+
+        return -1; 
+    }
+};
+
+int main() {
+    Solution sol;
+    string hay;
+    string need;
+    cout<<"Enter Haystack:"<<endl;
+    cin>>hay;
+     cout<<"Enter Needle:"<<endl;
+    cin>>need;
+    cout << sol.strStr(hay, need) << endl;  
+   
+
+    return 0;
+}
